@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Cachorro</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #f6baba, #e5dcff, #d9f3ff);
+            color: #55436c;
+        }
+
+        h1 {
+            font-size: 42px;
+            color: #a34f91;
+            margin-bottom: 35px;
+            text-shadow: 2px 3px 5px #ffffff;
+        }
+
+        h1::before {
+            content: "🐾 ";
+        }
+
+        h1::after {
+            content: " 🐾";
+        }
+
+        label {
+            display: inline-block;
+            font-weight: bold;
+            font-size: 16px;
+            margin: 12px 5px;
+            color: #79518c;
+        }
+
+        select, input {
+            padding: 12px;
+            border: 2px solid #d6b6ed;
+            border-radius: 12px;
+            background-color: #ffffff;
+            color: #654c7b;
+            font-size: 15px;
+            outline: none;
+            margin: 8px;
+            transition: 0.3s;
+        }
+
+        select:focus, input:focus {
+            border-color: #b477d1;
+            box-shadow: 0 0 8px #d9b5ed;
+        }
+
+        button {
+            padding: 13px 22px;
+            margin: 15px 7px;
+            border: none;
+            border-radius: 15px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 4px 8px #b9a4c8;
+        }
+
+        #aleatorios {
+            background-color: #ff91b8;
+            color: white;
+        }
+
+        #porRca {
+            background-color: #a987e8;
+            color: white;
+        }
+
+        button:hover {
+            transform: translateY(-4px) scale(1.04);
+            box-shadow: 0 7px 12px #a994bd;
+            filter: brightness(1.05);
+        }
+
+        #mensagem {
+            font-size: 16px;
+            font-weight: bold;
+            color: #925b9f;
+            margin: 20px;
+        }
+
+        #galeria {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 22px;
+            margin: 30px auto;
+            max-width: 1100px;
+        }
+
+        #galeria img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 22px;
+            border: 6px solid white;
+            box-shadow: 0 5px 15px #bba6cb;
+            transition: 0.3s;
+        }
+
+        #galeria img:hover {
+            transform: scale(1.06) rotate(1deg);
+            box-shadow: 0 8px 20px #a88bbd;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 30px;
+            }
+
+            button {
+                width: 90%;
+            }
+
+            #galeria img {
+                width: 90%;
+                height: 230px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Galeria de Cachorro</h1>
+
+    <label for="racas">Escolha uma raça:</label>
+    <select id="racas">
+        <option value="">Selecione uma raça</option>
+    </select>
+
+
+    <label for="quantidade">Quantidade:</label>
+        <input type="number"id="quantidade" min="1" max="10" value = "3"/>
+    </label>
+
+    <button id="aleatorios">Mostrar aleatórios</button>
+    <button id="porRca">Mostrar 3 da raça</button>
+
+    <p id="mensagem"></p>
+
+    <div id="galeria"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
